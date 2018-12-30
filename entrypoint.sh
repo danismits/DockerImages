@@ -19,7 +19,7 @@ else
 fi
 
 echo "publishing build"
-dotnet publish
+dotnet publish -c Release -o out
 
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 ${MODIFIED_STARTUP}
