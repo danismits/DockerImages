@@ -18,6 +18,9 @@ else
 	exit 1
 fi
 
+ echo "publishing build"
+ dotnet publish -c Release
+
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 ${MODIFIED_STARTUP}
 echo "Done"
