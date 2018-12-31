@@ -18,9 +18,6 @@ else
 	exit 1
 fi
 
- echo "publishing build"
- dotnet publish -c Release -o ./publish -r ubuntu.16.04-x64
-
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 ${MODIFIED_STARTUP}
 echo "Done"
