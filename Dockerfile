@@ -3,7 +3,6 @@ FROM buildpack-deps:stretch-scm
 # Install .NET CLI dependencies
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        libunwind8 \
         libc6 \
         libgcc1 \
         libgssapi-krb5-2 \
