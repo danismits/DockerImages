@@ -17,9 +17,6 @@ RUN curl -SL --output aspnetcore.tar.gz https://dotnetcli.blob.core.windows.net/
     && rm aspnetcore.tar.gz \
 && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
-# Trigger first run experience by running arbitrary cmd to populate local package cache
-RUN dotnet help
-
 USER 	container
 ENV  	USER container
 ENV  	HOME /home/container
