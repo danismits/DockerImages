@@ -26,7 +26,8 @@ then
     echo "Project is already published"
 	if [ -d "$UnpublishedProjectFolder" ] 
 	then
-		echo "Old folder still exists"
+		echo "Old folder still exists. Removing it now"
+		rm -rf "$UnpublishedProjectFolder"
 	fi
 else
 	echo "publishing project"	
