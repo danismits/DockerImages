@@ -18,6 +18,16 @@ else
 	exit 1
 fi
 
+PublishFolder=publish
+
+if [ -d "$PublishFolder" ]; 
+then
+    echo "$PublishFolder is a directory"
+else
+	echo "publishing project"
+	dotnet publish -c Release -o ./publish
+fi
+
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 ${MODIFIED_STARTUP}
 echo "Done"
