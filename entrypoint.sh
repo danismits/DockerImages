@@ -18,14 +18,19 @@ else
 	exit 1
 fi
 
-PublishFolder=publish
+File=publish/DisBocus-Bot.dll
+UnpublishedProjectFolder=DisBocus-Bot
 
-if [ -d "$PublishFolder" ]; 
+if [ -f "$File" ]; 
 then
-    echo "$PublishFolder is a directory"
+    echo "Project is already published"
+	if [ -d "$UnpublishedProjectFolder" ] 
+	then
+		echo "Old folder still exists"
+	fi
 else
-	echo "publishing project"
-	dotnet publish -c Release -o ./publish
+	echo "publishing project"	
+	dotnet publish DisBocus-Bot/DisBocus-Bot.csproj -c Release -o ./publish
 fi
 
 echo ":/home/container$ ${MODIFIED_STARTUP}"
