@@ -30,7 +30,7 @@ then
 	fi
 else
 	echo "publishing project"	
-	dotnet publish DisBocus-Bot/DisBocus-Bot.csproj -c Release -o ./publish
+	dotnet publish DisBocus-Bot/DisBocus-Bot.csproj -c Release -o ../publish
 fi
 
 echo ":/home/container$ ${MODIFIED_STARTUP}"
