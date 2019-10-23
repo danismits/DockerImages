@@ -23,15 +23,19 @@ UnpublishedProjectFolder=DisBocus-Bot
 
 if [ -f "$File" ]; 
 then
-    echo "Project is already published"
+    echo "Project is already published"	
+else
+	echo "publishing project"	
+	dotnet publish DisBocus-Bot/DisBocus-Bot.csproj -c Release -o ../publish
+fi
+
+if [ -f "$File" ]; 
+then
 	if [ -d "$UnpublishedProjectFolder" ] 
 	then
 		echo "Old folder still exists. Removing it now"
 		rm -rf "$UnpublishedProjectFolder"
 	fi
-else
-	echo "publishing project"	
-	dotnet publish DisBocus-Bot/DisBocus-Bot.csproj -c Release -o ../publish
 fi
 
 echo ":/home/container$ ${MODIFIED_STARTUP}"
