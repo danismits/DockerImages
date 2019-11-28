@@ -18,15 +18,15 @@ else
 	exit 1
 fi
 
-File=publish/DisBocus-Bot.dll
-UnpublishedProjectFolder=DisBocus-Bot
+File=publish/Lekkercraft.dll
+UnpublishedProjectFolder=Lekkercraft
 
 if [ -f "$File" ]; 
 then
     echo "Project is already published"	
 else
 	echo "publishing project"	
-	dotnet publish DisBocus-Bot/DisBocus-Bot.csproj -c Release -o ../publish
+	dotnet publish Lekkercraft/Lekkercraft.csproj -c Release -o ../publish
 fi
 
 if [ -f "$File" ]; 
